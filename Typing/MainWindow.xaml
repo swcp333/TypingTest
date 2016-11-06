@@ -1,0 +1,156 @@
+﻿<Window x:Name="KeyboardForm" x:Class="Typing.MainWindow"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
+  input:InputMethod.IsInputMethodEnabled="False"
+  Title="打字练习" Height="550" Width="580" ResizeMode="NoResize" Background="Gainsboro" 
+  KeyDown="KeyboardForm_KeyDown" PreviewTextInput="KeyboardForm_PreviewTextInput" Icon="Keyboard.ico"  >
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition Width="530"></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="190" ></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <RichTextBox x:Name="CheckTextBox" Grid.Column="1" Grid.Row="0" Margin="0,0,0,0" Height="290" Width="530" FontSize="30" Focusable="False" FontFamily="./#Inconsolata" Block.LineHeight="40"/>
+
+
+        <Grid x:Name="Display" Grid.Column="1"  Grid.Row="1" >
+            <Label x:Name="Oem3" Content="`" Background="White" HorizontalAlignment="Left" Margin="5,5,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="Gray" Margin="3,3,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="D1" Content="1" Background="White" HorizontalAlignment="Left" Margin="40,5,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="Gray" Margin="38,3,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="D2" Content="2" Background="White" HorizontalAlignment="Left" Margin="75,5,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="OrangeRed" Margin="73,3,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="D3" Content="3" Background="White" HorizontalAlignment="Left" Margin="110,5,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="DarkGreen" Margin="108,3,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="D4" Content="4" Background="White" HorizontalAlignment="Left" Margin="145,5,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="DeepSkyBlue" Margin="143,3,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="D5" Content="5" Background="White" HorizontalAlignment="Left" Margin="180,5,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="DeepSkyBlue" Margin="178,3,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="D6" Content="6" Background="White" HorizontalAlignment="Left" Margin="215,5,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="BlueViolet" Margin="213,3,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="D7" Content="7" Background="White" HorizontalAlignment="Left" Margin="250,5,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="BlueViolet" Margin="248,3,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="D8" Content="8" Background="White" HorizontalAlignment="Left" Margin="285,5,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="ForestGreen" Margin="283,3,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="D9" Content="9" Background="White" HorizontalAlignment="Left" Margin="320,5,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="IndianRed" Margin="318,3,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="D0" Content="0" Background="White" HorizontalAlignment="Left" Margin="355,5,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="LightSlateGray" Margin="353,3,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="OemMinus" Content="-" Background="White" HorizontalAlignment="Left" Margin="390,5,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="LightSlateGray" Margin="388,3,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="OemPlus" Content="=" Background="White" HorizontalAlignment="Left" Margin="425,5,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="LightSlateGray" Margin="423,3,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="Back" Content="Basp" Background="White" HorizontalAlignment="Left" Margin="460,5,5,5" VerticalAlignment="Top" Width="60" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="LightSlateGray" Margin="458,3,0,0" Width="64" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+
+            <Label x:Name="Tab" Content="Tab" Background="White" Margin="5,40,5,5" VerticalAlignment="Top" Width="45" Height="30" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="Gray" Margin="3,38,0,0" Width="49" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="Q" Content="Q" Background="White" HorizontalAlignment="Left" Margin="55,40,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="Gray" Margin="53,38,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="W" Content="W" Background="White" HorizontalAlignment="Left" Margin="90,40,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="OrangeRed" Margin="88,38,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="E" Content="E" Background="White" HorizontalAlignment="Left" Margin="125,40,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="DarkGreen" Margin="123,38,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="R" Content="R" Background="White" HorizontalAlignment="Left" Margin="160,40,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="DeepSkyBlue" Margin="158,38,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="T" Content="T" Background="White" HorizontalAlignment="Left" Margin="195,40,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="DeepSkyBlue" Margin="193,38,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="Y" Content="Y" Background="White" HorizontalAlignment="Left" Margin="230,40,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="BlueViolet" Margin="228,38,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="U" Content="U" Background="White" HorizontalAlignment="Left" Margin="265,40,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="BlueViolet" Margin="263,38,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="I" Content="I" Background="White" HorizontalAlignment="Left" Margin="300,40,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="ForestGreen" Margin="298,38,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="O" Content="O" Background="White" HorizontalAlignment="Left" Margin="335,40,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="IndianRed" Margin="333,38,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="P" Content="P" Background="White" HorizontalAlignment="Left" Margin="370,40,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="LightSlateGray" Margin="368,38,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="OemOpenBrackets" Content="[" Background="White" HorizontalAlignment="Left" Margin="405,40,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="LightSlateGray" Margin="403,38,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="Oem6" Content="]" Background="White" HorizontalAlignment="Left" Margin="440,40,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="LightSlateGray" Margin="438,38,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="Oem5" Content="\" Background="White" HorizontalAlignment="Left" Margin="475,40,5,5" VerticalAlignment="Top" Width="45" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="LightSlateGray" Margin="473,38,0,0" Width="49" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+
+            <Label x:Name="Capital" Content="Caps" Background="White" HorizontalAlignment="Left" Margin="5,75,5,5" VerticalAlignment="Top" Width="60" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="Gray" Margin="3,73,0,0" Width="64" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="A" Content="A" Background="White" HorizontalAlignment="Left" Margin="70,75,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="Gray" Margin="68,73,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="S" Content="S" Background="White" HorizontalAlignment="Left" Margin="105,75,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="OrangeRed" Margin="103,73,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="D" Content="D" Background="White" HorizontalAlignment="Left" Margin="140,75,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="DarkGreen" Margin="138,73,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="F" Content="F" Background="White" HorizontalAlignment="Left" Margin="175,75,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="DeepSkyBlue" Margin="173,73,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="G" Content="G" Background="White" HorizontalAlignment="Left" Margin="210,75,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="DeepSkyBlue" Margin="208,73,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="H" Content="H" Background="White" HorizontalAlignment="Left" Margin="245,75,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="BlueViolet" Margin="243,73,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="J" Content="J" Background="White" HorizontalAlignment="Left" Margin="280,75,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="BlueViolet" Margin="278,73,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="K" Content="K" Background="White" HorizontalAlignment="Left" Margin="315,75,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="ForestGreen" Margin="313,73,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="L" Content="L" Background="White" HorizontalAlignment="Left" Margin="350,75,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="IndianRed" Margin="348,73,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="Oem1" Content=";" Background="White" HorizontalAlignment="Left" Margin="385,75,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="LightSlateGray" Margin="383,73,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="OemQuotes" Content="'" Background="White" HorizontalAlignment="Left" Margin="420,75,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="LightSlateGray" Margin="418,73,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="Return" Content="Enter" Background="White" HorizontalAlignment="Left" Margin="455,75,5,5" VerticalAlignment="Top" Width="65" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="LightSlateGray" Margin="453,73,0,0" Width="69" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+
+            <Label x:Name="LeftShift" Content="Shift" Background="White" HorizontalAlignment="Left" Margin="5,110,5,5" VerticalAlignment="Top" Width="70" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="Gray" Margin="3,108,0,0" Width="74" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="Z" Content="Z" Background="White" HorizontalAlignment="Left" Margin="80,110,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="Gray" Margin="78,108,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="X" Content="X" Background="White" HorizontalAlignment="Left" Margin="115,110,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="OrangeRed" Margin="113,108,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="C" Content="C" Background="White" HorizontalAlignment="Left" Margin="150,110,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="DarkGreen" Margin="148,108,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="V" Content="V" Background="White" HorizontalAlignment="Left" Margin="185,110,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="DeepSkyBlue" Margin="183,108,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="B" Content="B" Background="White" HorizontalAlignment="Left" Margin="220,110,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="DeepSkyBlue" Margin="218,108,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="N" Content="N" Background="White" HorizontalAlignment="Left" Margin="255,110,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="BlueViolet" Margin="253,108,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="M" Content="M" Background="White" HorizontalAlignment="Left" Margin="290,110,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="BlueViolet" Margin="288,108,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="OemComma" Content="," Background="White" HorizontalAlignment="Left" Margin="325,110,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="ForestGreen" Margin="323,108,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="OemPeriod" Content="." Background="White" HorizontalAlignment="Left" Margin="360,110,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="IndianRed" Margin="358,108,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="OemQuestion" Content="/" Background="White" HorizontalAlignment="Left" Margin="395,110,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="LightSlateGray" Margin="393,108,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="RightShift" Content="Shift" Background="White" HorizontalAlignment="Left" Margin="430,110,5,5" VerticalAlignment="Top" Width="90" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="LightSlateGray" Margin="428,108,0,0" Width="94" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+
+            <Label x:Name="LeftCtrl" Content="Ctrl" Background="White" HorizontalAlignment="Left" Margin="5,145,5,5" VerticalAlignment="Top" Width="40" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="Gray" Margin="3,143,0,0" Width="44" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label Content="Win" Background="White" HorizontalAlignment="Left" Margin="50,145,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="Gray" Margin="48,143,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label Content="Alt" Background="White" HorizontalAlignment="Left" Margin="85,145,5,5" VerticalAlignment="Top" Width="40" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="OrangeRed" Margin="83,143,0,0" Width="44" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="Space" Content="Space" Background="White" HorizontalAlignment="Left" Margin="130,145,5,5" VerticalAlignment="Top" Width="230" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="Purple" Margin="128,143,0,0" Width="234" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label Content="Alt" Background="White" HorizontalAlignment="Left" Margin="365,145,5,5" VerticalAlignment="Top" Width="40" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="ForestGreen" Margin="363,143,0,0" Width="44" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label Content="Win" Background="White" HorizontalAlignment="Left" Margin="410,145,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="IndianRed" Margin="408,143,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label Content="Menu" Background="White" HorizontalAlignment="Left" Margin="445,145,5,5" VerticalAlignment="Top" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="LightSlateGray" Margin="443,143,0,0" Width="34" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Label x:Name="RightCtrl" Content="Ctrl" Background="White" HorizontalAlignment="Left" Margin="480,145,5,5" VerticalAlignment="Top" Width="40" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Background="LightSlateGray" Margin="478,143,0,0" Width="44" Height="34" Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        </Grid>
+    </Grid>
+</Window>

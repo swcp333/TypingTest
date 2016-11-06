@@ -1,0 +1,13 @@
+E:\typing\Typing\Typing\bin\Release\Typing.exe.config
+E:\typing\Typing\Typing\obj\Release\MainWindow.baml
+E:\typing\Typing\Typing\obj\Release\MainWindow.g.cs
+E:\typing\Typing\Typing\obj\Release\App.g.cs
+E:\typing\Typing\Typing\obj\Release\Typing_MarkupCompile.cache
+E:\typing\Typing\Typing\obj\Release\Typing.g.resources
+E:\typing\Typing\Typing\obj\Release\Typing.Properties.Resources.resources
+E:\typing\Typing\Typing\obj\Release\Typing.csproj.GenerateResource.Cache
+E:\typing\Typing\Typing\bin\Release\Typing.exe
+E:\typing\Typing\Typing\bin\Release\Typing.pdb
+E:\typing\Typing\Typing\obj\Release\Typing.exe
+E:\typing\Typing\Typing\obj\Release\Typing.pdb
+E:\typing\Typing\Typing\obj\Release\Typing.csprojResolveAssemblyReference.cache
