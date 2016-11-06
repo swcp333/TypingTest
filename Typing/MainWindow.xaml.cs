@@ -1,4 +1,5 @@
-﻿using System.Media;
+﻿using System;
+using System.Media;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
@@ -67,8 +68,13 @@ namespace Typing
                 if (textofInput[nowIndex] != textofCheck[nowIndex])
                 {
                     GetCheckTextRange(nowIndex, Brushes.White, Brushes.OrangeRed);
-                    SoundPlayer player = new SoundPlayer(@"./input_wrong.wav");
-                    player.Play();
+                    try
+                    {
+                        SoundPlayer player = new SoundPlayer(@"./input_wrong.wav");
+                        player.Play();
+                    }
+                    catch (Exception){}
+                    
                 }
                 else
                 {
